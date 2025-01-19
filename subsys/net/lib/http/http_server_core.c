@@ -751,9 +751,7 @@ struct http_resource_detail *get_resource_detail(const struct http_service_desc 
 				*path_len = strlen(resource->resource);
 				return resource->detail;
 			}
-		}
-
-		if (compare_strings(path, resource->resource) == 0) {
+			} else if (compare_strings(path, resource->resource) == 0) {
 			NET_DBG("Got match for %s", resource->resource);
 
 			*path_len = strlen(resource->resource);
